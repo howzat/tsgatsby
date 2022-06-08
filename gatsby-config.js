@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `website`,
-    siteUrl: `https://www.yourdomain.tld`
+    title: `Toldspaces`,
+    siteUrl: `https://www.toldspaces.com`
   },
   plugins: ["gatsby-plugin-postcss"]
 };
