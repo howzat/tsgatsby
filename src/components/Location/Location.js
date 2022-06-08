@@ -38,8 +38,8 @@ const LocationComponent = (props) => {
                 </div>
 
                 <div className="w-full lg:w-2/5">
-                    <img src={props.data.image}
-                                                      className="rounded-none lg:rounded-lg shadow-2xl hidden lg:block border-white border-8" />
+                    <img src={props.data.image} alt={props.data.text}
+                         className="rounded-none lg:rounded-lg shadow-2xl hidden lg:block border-white border-8" />
                 </div>
 
             </div>

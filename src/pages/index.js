@@ -23,8 +23,7 @@ const IndexPage = () => {
 
     return (
         <MainLayout>
-            <div className={'bg-red-500 p-6'}>
-                <p>Hello</p>
+            <div className={''}>
                 {
                     data.allLocationsJson.edges.map(({node: location}) => (
                         <p>
