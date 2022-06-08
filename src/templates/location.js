@@ -2,11 +2,10 @@ import React from "react"
 import LocationComponent from "../components/Location/Location";
 import {graphql} from "gatsby";
 
-export const LocationTemplate = (props) => {
+export const LocationTemplate = ({data}) => {
     return (
-        <div style={{backgroundImage: "url('https://source.unsplash.com/1L71sPT5XKc')"}}>
-            <LocationComponent data={pageQuery}/>
-            {/*<LocationComponent data={{name: 'Location 1'}}/>*/}
+        <div style={{backgroundImage: "url('https://source.unsplash.com/sp-p7uuT0tw')", backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}>
+            <LocationComponent data={data.locationsJson}/>
         </div>
     )
 }
@@ -20,6 +19,7 @@ export const pageQuery = graphql`
                 text
                 description
                 latLng
+                image
                 pathName
         }
     }`
