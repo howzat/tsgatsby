@@ -1,5 +1,6 @@
 import React from "react"
 import LocationComponent from "../components/Location/Location";
+import {graphql} from "gatsby";
 
 export const LocationTemplate = (props) => {
 	return (
@@ -9,3 +10,11 @@ export const LocationTemplate = (props) => {
 
 export default LocationTemplate
 
+// export const pageQuery = graphql`
+// 	query LocationByPath($path: String!) {
+// 		allLocationsData($path: {eq: $path}) {
+// 			text
+// 			description
+// 			latLng
+// 		}
+// 	}`

@@ -1,35 +1,44 @@
 import * as React from "react"
 import MainLayout from "../layout";
-import {graphql, useStaticQuery} from "gatsby";
+import {graphql, Link, useStaticQuery} from "gatsby";
 
 
 // markup
 const IndexPage = () => {
 
-	const data = useStaticQuery(graphql`
-	query LocationsQuery {
-		allLocationsJson{
-			edges{
-				node{
-					path
-					text
-				}
-			}
-		}
-	}`)
+    const data = useStaticQuery(graphql`
+        query LocationsQuery {
+            allLocationsJson{
+                edges{
+                    node{
+                        path
+                        text
+                    }
+                }
+            }
+        }`)
 
-	console.log({data})
+    console.log({data})
 
 
-	return (
-			<MainLayout>
-				{
-					data.allLocationsJson.edges.map( location => (
-							<p key={location.path}>{location.text}</p>
-					))
-				}
-			</MainLayout>
-	)
+    return (
+        <MainLayout>
+            <div className={'bg-red-500 p-6'}>
+                <p>Hello</p>
+                {
+                    data.allLocationsJson.edges.map(({node: location}) => (
+                        <p>
+                            <Link to={location.path}
+                                  key={location.path}>
+                                {location.text}
+                            </Link>
+                        </p>
+                    ))
+                }
+            </div>
+        </MainLayout>
+    )
 }
 
 export default IndexPage
+
