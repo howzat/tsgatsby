@@ -3,6 +3,6 @@
 @tailwind utilities;
 
 body {
-    @apply p-16 m-10 font-mono
+    /*@apply p-16 m-10 font-mono*/
     /*background-color: #8EB814;*/
 }
