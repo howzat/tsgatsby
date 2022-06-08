@@ -7,16 +7,17 @@ exports.createPages = ({ actions }) => {
 	// Your component that should be rendered for every item in JSON.
 	const template = path.resolve(`./src/templates/location.js`);
 
-	console.log({data})
+	// console.log({data})
 	// Create pages for each JSON entry.
 	data.forEach( location => {
 
-		console.log(location)
+		// console.log(location)
 
 		createPage({
-			path: location.path,
+			path: location.pathName,
 			component: template,
 			context: {
+				pathName: location.pathName,
 				text: location.text,
 				description: location.description,
 				latLng: location.latLng,

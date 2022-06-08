@@ -11,7 +11,7 @@ const IndexPage = () => {
             allLocationsJson{
                 edges{
                     node{
-                        path
+                        pathName
                         text
                     }
                 }
@@ -28,8 +28,8 @@ const IndexPage = () => {
                 {
                     data.allLocationsJson.edges.map(({node: location}) => (
                         <p>
-                            <Link to={location.path}
-                                  key={location.path}>
+                            <Link to={location.pathName}
+                                  key={location.pathName}>
                                 {location.text}
                             </Link>
                         </p>

@@ -2,6 +2,8 @@ import React from "react"
 import "./Location.css"
 
 const LocationComponent = (props) => {
+
+	console.log(props.data)
 	return (
 			<>
 				<div className="max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-32 lg:my-0">
@@ -13,7 +15,7 @@ const LocationComponent = (props) => {
 						<div className="p-4 md:p-12 text-center lg:text-left">
 							<div className="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center"></div>
 
-							<h1 className="text-3xl font-bold pt-8 lg:pt-0">{props.data.name}</h1>
+							<h1 className="text-3xl font-bold pt-8 lg:pt-0">{props.data.text}</h1>
 							<div className="mx-auto lg:mx-0 w-4/5 pt-3 border-b-2 border-green-500 opacity-25"></div>
 							<p className="pt-4 text-base font-bold flex items-center justify-center lg:justify-start">
 								<svg className="h-4 fill-current text-green-700 pr-4" xmlns="http://www.w3.org/2000/svg"
