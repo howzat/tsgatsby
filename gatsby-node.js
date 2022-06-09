@@ -18,6 +18,7 @@ exports.createPages = ({ actions }) => {
 				text: location.text,
 				description: location.description,
 				latLng: location.latLng,
+				location: location.location,
 				image: location.image
 			}
 		});

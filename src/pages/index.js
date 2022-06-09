@@ -14,26 +14,25 @@ const IndexPage = () => {
                     node{
                         pathName
                         text
+                        location {
+                            lat
+                            lng
+                        }
                     }
                 }
             }
         }`)
 
-    const apiKey = '' // @todo - Watson\'s Google Maps API (used to demo capabilities - swap out when you can)
+    const apiKey = 'AIzaSyD6AUPIR0eIiGldIIo0b06uqLxlZDyQh-I' // @todo - random Google Maps API (used to demo capabilities - swap out when you can)
 
-    // const render = (status) => {
-    //     switch (status) {
-    //         case Status.LOADING:
-    //             return 'Spinner'
-    //         case Status.FAILURE:
-    //             return 'Error'
-    //         case Status.SUCCESS:
-    //             return <MapComponent data={data.allLocationsJson.edges}/>
-    //     }
-    // };
+    const render = (status) => {
+        if (status === Status.LOADING) return <p>Loading...</p>;
+        if (status === Status.FAILURE) return <p>Error...</p>;
+        return null;
+    };
 
     const center = {lat: 50.86487099999999, lng: -0.09649499999999867}
-    const zoom = 16
+    const zoom = 15
 
     return (
         <MainLayout>
@@ -48,11 +47,11 @@ const IndexPage = () => {
                     ))
                 }
             </div>
-            <Wrapper apiKey={apiKey}>
-                <div className={'h-screen'}>
-                    <MapComponent data={data.allLocationsJson.edges} center={center} zoom={zoom}/>
-                </div>
+            <Wrapper apiKey={apiKey} render={render}>
+                <MapComponent data={data.allLocationsJson.edges} center={center} zoom={zoom}/>
             </Wrapper>
+            <div id="map" className={'h-screen'}/>
+
         </MainLayout>
     )
 }
