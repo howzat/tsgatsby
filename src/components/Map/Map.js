@@ -19,7 +19,7 @@ export const MapComponent = (props) => {
     // Add marker
     useEffect(() => {
         if (map) {
-            map.setOptions({ center: props.center, zoom: 13 });
+            map.setOptions({ center: props.center, zoom: props.zoom });
         }
         new window.google.maps.Marker({
             position: props.center,
