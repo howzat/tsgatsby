@@ -1,8 +1,9 @@
 import * as React from "react"
 import {graphql, Link, useStaticQuery} from "gatsby";
 import MainLayout from "../layout";
-import {Wrapper, Status} from "@googlemaps/react-wrapper";
+import {Wrapper} from "@googlemaps/react-wrapper";
 import MapComponent from "../components/Map/Map";
+import Marker from "../components/Map/Marker";
 
 // markup
 const IndexPage = () => {
@@ -34,6 +35,8 @@ const IndexPage = () => {
 
     const center = {lat: 50.86487099999999, lng: -0.09649499999999867}
     const zoom = 16
+    // const position = '50.86441161013995, -0.09220047454726349'
+    const position = {lat: 50.86487099999999, lng: -0.09649499999999867}
 
     return (
         <MainLayout>
@@ -50,7 +53,9 @@ const IndexPage = () => {
             </div>
             <Wrapper apiKey={apiKey}>
                 <div className={'h-screen'}>
-                    <MapComponent data={data.allLocationsJson.edges} center={center} zoom={zoom}/>
+                    <MapComponent data={data.allLocationsJson.edges} center={center} zoom={zoom}>
+                        <Marker position={position} />
+                    </MapComponent>
                 </div>
             </Wrapper>
         </MainLayout>
