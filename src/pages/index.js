@@ -19,7 +19,7 @@ const IndexPage = () => {
             }
         }`)
 
-    const apiKey = 'AIzaSyBCQuT-8U2-wMIB5shc1aK2kc9knsfLdGg' // @todo - Watson\'s Google Maps API (used to demo capabilities - swap out when you can)
+    const apiKey = '' // @todo - Watson\'s Google Maps API (used to demo capabilities - swap out when you can)
 
     // const render = (status) => {
     //     switch (status) {
